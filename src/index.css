@@ -4,17 +4,28 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Noto Serif SC", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  
+  --color-paper: #F3EEE5;
+  --color-mist: #FBF8F3;
+  --color-ink: #342D28;
+  --color-seal: #8D3838;
+  --color-gold: #A67C52;
+  --color-jade: #6E7B78;
+  --color-night: #34404B;
+  --color-storm: #7E7280;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #F4EFE6; /* Warm aged paper */
-  color: #3E362E; /* Dark brown/black */
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

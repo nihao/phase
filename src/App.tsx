@@ -35,9 +35,9 @@ export default function App() {
         {!user && <AuthModal />}
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={user ? <FlowPage /> : <Navigate to="/" />} />
-            <Route path="lab" element={user ? <LabPage /> : <Navigate to="/" />} />
-            <Route path="profile" element={user ? <ProfilePage /> : <Navigate to="/" />} />
+            <Route index element={user ? <FlowPage /> : null} />
+            <Route path="lab" element={user ? <LabPage /> : null} />
+            <Route path="profile" element={user ? <ProfilePage /> : null} />
           </Route>
         </Routes>
       </BrowserRouter>
