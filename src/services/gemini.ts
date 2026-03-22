@@ -5,7 +5,8 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 export async function getEnergyAdvice(
   userMessage: string,
   chatHistory: { role: 'user' | 'model'; text: string }[],
-  userProfile: any
+  userProfile: any,
+  language: string = 'zh'
 ) {
   const systemInstruction = `
     你是一个名为“相谕 Phase”的专属AI能量管家。
@@ -20,6 +21,8 @@ export async function getEnergyAdvice(
     请用极具呼吸感、现代感、略带玄学但非常克制的语言回复。
     不要像算命大仙，要像一个高级气象预报员给出的生活指南。
     例如：“你的能量场正在重组，如同遭遇强对流天气，建议将精力收束于内。”
+    
+    IMPORTANT: You MUST respond in the following language: ${language === 'en' ? 'English' : 'Simplified Chinese'}.
   `;
 
   const contents = chatHistory.map(msg => ({

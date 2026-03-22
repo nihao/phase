@@ -6,7 +6,6 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 import { Layout } from './components/Layout';
 import { AuthModal } from './components/AuthModal';
 import { FlowPage } from './pages/FlowPage';
-import { LabPage } from './pages/LabPage';
 import { ProfilePage } from './pages/ProfilePage';
 
 export default function App() {
@@ -23,8 +22,8 @@ export default function App() {
 
   if (!isAuthReady) {
     return (
-      <div className="flex h-screen items-center justify-center bg-[#F4EFE6]">
-        <div className="h-8 w-8 animate-spin rounded-full border-2 border-[#3E362E] border-t-transparent" />
+      <div className="flex h-screen items-center justify-center bg-[#FDFBF7]">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-[#1A1D1E] border-t-transparent" />
       </div>
     );
   }
@@ -36,7 +35,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={user ? <FlowPage /> : null} />
-            <Route path="lab" element={user ? <LabPage /> : null} />
             <Route path="profile" element={user ? <ProfilePage /> : null} />
           </Route>
         </Routes>
